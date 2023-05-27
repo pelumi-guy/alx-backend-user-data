@@ -2,11 +2,11 @@
 """
 Script for handling Personal Data
 """
-from typing import List
 import re
 import logging
+import mysql.connector
 from os import environ
-# import mysql.connector
+from typing import List
 
 
 # # PII fields to be redacted
