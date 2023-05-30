@@ -12,10 +12,8 @@ from api.v1.auth.auth import Auth
 # check the AUTH_TYPE
 if AUTH_TYPE == 'auth':
     from api.v1.auth.auth import Auth
-    auth = Auth()
 elif AUTH_TYPE == 'basic_auth':
     from api.v1.auth.basic_auth import BasicAuth
-    auth = BasicAuth()
 
 app = Flask(__name__)
 app.register_blueprint(app_views)
@@ -24,6 +22,7 @@ if AUTH_TYPE == 'auth':
     auth = Auth()
 elif AUTH_TYPE == 'basic_auth':
     auth = BasicAuth()
+
 
 @app.before_request
 def before_request():
