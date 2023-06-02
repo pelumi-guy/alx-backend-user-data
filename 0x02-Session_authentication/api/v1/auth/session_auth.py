@@ -3,9 +3,9 @@
 Module for authentication using Session auth
 """
 from api.v1.auth.auth import Auth
-from flask import request, jsonify, abort
+from typing import TypeVar
+from uuid import uuid4
 from models.user import User
-from os import getenv
 
 
 class SessionAuth(Auth):
